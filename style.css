@@ -1,5 +1,5 @@
 * {
-  color:aqua;
+  color:rgb(0, 255, 255);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -14,12 +14,16 @@ header {
   display:flex;
   height: 100vh;
   align-items: flex-end;
-  padding-bottom: 30vh;
+  padding-bottom: 20vh;
   justify-content: center;
 }
 
 .intro {
   font-size: 2em;
+}
+
+.greeting {
+  padding-bottom: 1vh;
 }
 
 header span {
@@ -50,6 +54,7 @@ nav {
 a {
   padding:5px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 a:hover {
@@ -74,9 +79,13 @@ h2 {
   width:50%;
 }
 
+.about-description {
+  margin:0 auto;
+  text-align: center;
+}
+
 /* To create a gradient border we set a background to the wrap container and then a black background and padding to make it look like a background */
 .border-wrap {
-  position: relative;
   background: linear-gradient(to right, var(--rosso), aqua);
   padding: 3px;
   margin:2rem;
@@ -90,6 +99,17 @@ h2 {
   width:3vw;
 }
 
+.silhoutte {
+  height: 15rem;
+  padding:2rem;
+}
+
+
+footer  {
+  font-size: 0.7em;
+  margin:0 auto;
+  text-align: center;
+}
 
 :root {
   --rosso: rgb(255, 0, 98);;
