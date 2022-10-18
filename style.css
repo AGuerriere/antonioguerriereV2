@@ -74,14 +74,14 @@ h2 {
 
 .about-details {
   display:flex;
-  justify-content: space-between;
   margin:2vw;
-  width:50%;
+
 }
 
 .about-description {
   margin:0 auto;
   text-align: center;
+  width:50%;
 }
 
 /* To create a gradient border we set a background to the wrap container and then a black background and padding to make it look like a background */
@@ -90,9 +90,15 @@ h2 {
   padding: 3px;
   margin:2rem;
 }
+
+.skills {
+  display: flex;
+}
+
 .skill {
   background: black;
   padding:1rem;
+  height:10vh;
 }
 
 .skill img {
@@ -117,11 +123,18 @@ h2 {
 }
 
 .project-description h3{
-  width:fit-content;
   padding: 1px;
   border-bottom:2px solid var(--rosso)
 }
 
+.project-links{
+  padding:2rem 0;
+}
+
+.project-links a {
+  margin-right:8rem;
+  border:3px solid;
+}
 footer  {
   font-size: 0.7em;
   margin:0 auto;
