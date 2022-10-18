@@ -93,16 +93,20 @@ h2 {
 
 .skills {
   display: flex;
+
 }
 
 .skill {
   background: black;
   padding:1rem;
-  height:10vh;
+  height:9vh;
+
 }
 
 .skill img {
   width:3vw;
+  padding-bottom: 0px;
+  
 }
 
 .silhoutte {
@@ -124,7 +128,8 @@ h2 {
 
 .project-description h3{
   padding: 1px;
-  border-bottom:2px solid var(--rosso)
+  border-bottom:2px solid var(--rosso);
+  width:fit-content;
 }
 
 .project-links{
@@ -145,4 +150,31 @@ footer  {
   --rosso: rgb(255, 0, 98);;
 }
 
+
+@media only screen and (max-width: 992px) {
+  .about-details {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-direction: column;
+  }
+
+  .skills {
+    margin:0 auto;
+    text-align: center;
+    width:50%;
+  }
+
+  .project {
+    margin:0 auto;
+    width:65vw;
+  }
+
+  .skill {
+    height:5vh;
+  }
+
+  
+} 
 
