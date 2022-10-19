@@ -152,8 +152,18 @@ footer  {
 
 
 @media only screen and (max-width: 992px) {
+  .intro {
+    font-size: 2em;
+
+  }
+
   .about-details {
     flex-direction: column;
+  }
+
+  .about-description {
+    margin:0px;
+    width: fit-content;
   }
 
   .project {
@@ -163,7 +173,7 @@ footer  {
   .skills {
     margin:0 auto;
     text-align: center;
-    width:50%;
+    
   }
 
   .project {
@@ -175,6 +185,13 @@ footer  {
     height:5vh;
   }
 
+  .project-links {
+    display: flex;
+  }
+
+  .project img {
+    order:1;
+  }
   
 } 
 
