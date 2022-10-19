@@ -3,34 +3,53 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: black;
 }
 
 header {
   box-sizing: border-box;
-  background-image: url("NYC.jpg");
+  background-image: url("./imgs/NYC.jpg");
   background-size: cover;
   display:flex;
   height: 100vh;
   align-items: flex-end;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
   justify-content: center;
 }
 
 .intro {
   font-size: 3em;
+  text-align: center;
 }
 
 .greeting {
   padding-bottom: 1vh;
 }
 
+.find-out {
+  width: fit-content;
+  margin: 2vh auto;
+  padding: 5px;
+}
+
+.heading__arrow {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  transform: rotate(360deg);
+  fill: var(--rosso);
+  transition: all 2s;
+}
+
+
 header span {
   color: var(--rosso);
   animation-direction: reverse;
   animation-duration: 2s;
-
 }
 
 nav {
@@ -57,9 +76,11 @@ a {
   white-space: nowrap;
 }
 
-a:hover {
+a:hover:not(#arrow-link) {
   background-color: var(--rosso);
 }
+
+
 
 h2 {
   display: flex;
@@ -209,4 +230,3 @@ footer  {
   }
   
 } 
-
