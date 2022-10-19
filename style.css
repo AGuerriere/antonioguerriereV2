@@ -114,6 +114,10 @@ h2 {
   padding:2rem;
 }
 
+.section-title-margin {
+  height: 64px;;
+}
+
 .project {
   display:flex;
 }
@@ -153,7 +157,7 @@ footer  {
 
 @media only screen and (max-width: 992px) {
   .intro {
-    font-size: 2em;
+    font-size: 8vw;
 
   }
 
@@ -182,7 +186,13 @@ footer  {
   }
 
   .skill {
-    height:5vh;
+    height:auto;
+    width:auto;
+  }
+
+  .skill img {
+    width:5vw;
+    height:2.7vh;
   }
 
   .project-links {
