@@ -93,7 +93,12 @@ h2 {
 
 .skills {
   display: flex;
+}
 
+.skill-column {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
 }
 
 .skill {
@@ -106,7 +111,6 @@ h2 {
 .skill img {
   width:3vw;
   padding-bottom: 0px;
-  
 }
 
 .silhoutte {
@@ -146,7 +150,7 @@ h2 {
 }
 footer  {
   font-size: 0.7em;
-  margin:0 auto;
+  margin:3vh auto;
   text-align: center;
 }
 
