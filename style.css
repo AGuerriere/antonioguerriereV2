@@ -104,12 +104,13 @@ h2 {
 .skill {
   background: black;
   padding:1rem;
-  height:9vh;
+  height:auto
 
 }
 
 .skill img {
   width:3vw;
+  height: 6vh;
   padding-bottom: 0px;
 }
 
