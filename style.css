@@ -141,7 +141,7 @@ h2 {
 }
 
 .section-title-margin {
-  height: 64px;;
+  min-height: 7.5vh;
 }
 
 .project {
