@@ -91,6 +91,8 @@ h2 {
 .section-title {
   display: flex;
   justify-content: center;
+  /* scroll-margin-top is used to prevent anchor links from scrolling behind a sticky header with one line of CSS */
+  scroll-margin-top: 7vh;
 }
 
 .about-details {
@@ -138,10 +140,6 @@ h2 {
 .silhoutte {
   height: 15rem;
   padding:2rem;
-}
-
-.section-title-margin {
-  height: 67px;
 }
 
 .project {
