@@ -116,6 +116,7 @@ h2 {
 
 .skills {
   display: flex;
+  
 }
 
 .skill-column {
@@ -127,13 +128,17 @@ h2 {
 .skill {
   background: black;
   padding:1rem;
-  height:auto
+  width: 5vw;
+  height:5vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
 
 }
 
 .skill img {
-  width:3vw;
-  height: 6vh;
+  height: 4vw;
   padding-bottom: 0px;
 }
 
@@ -187,10 +192,11 @@ footer  {
 
   .about-details {
     flex-direction: column;
+    margin:0;
   }
 
   .about-description {
-    margin:0px;
+    margin:5px;
     width: fit-content;
   }
 
@@ -198,8 +204,12 @@ footer  {
     flex-direction: column;
   }
 
+  .border-wrap {
+    margin: 5vw;
+  }
+
   .skills {
-    margin:0 auto;
+    justify-content: space-evenly;
     text-align: center;
     
   }
@@ -210,13 +220,13 @@ footer  {
   }
 
   .skill {
-    height:auto;
-    width:auto;
+    height:9vw;
+    width:9vw;
   }
 
   .skill img {
-    width:5vw;
-    height:2.7vh;
+    width:auto;
+    height:5vh;
   }
 
   .project-links {
