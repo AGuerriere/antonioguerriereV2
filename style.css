@@ -107,6 +107,10 @@ h2 {
   width:50%;
 }
 
+.about-description p {
+  text-align: justify;
+}
+
 /* To create a gradient border we set a background to the wrap container and then a black background and padding to make it look like a background */
 .border-wrap {
   background: linear-gradient(to right, var(--rosso), aqua);
