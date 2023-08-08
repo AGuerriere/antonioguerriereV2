@@ -181,7 +181,7 @@ h2 {
   width:fit-content;
 }
 
-.project-links{
+.project-links {
   padding:2rem 0;
   display: flex;
   justify-content: left ;
@@ -243,6 +243,10 @@ footer  {
   }
 
   .project {
+    display:flex;
+    flex-direction: column;
+    align-items: center!important;
+    justify-content: center!important;
     margin:0 auto;
     width:65vw;
   }
@@ -259,11 +263,25 @@ footer  {
 
   .project-links {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .project-links a{
+    margin: auto 20px auto 20px !important;
   }
 
   .project img {
     order:1;
   }
+
+  .project-description {
+    display:flex;
+    flex-direction: column;
+    align-items: center!important;
+    text-align: center!important;
+  } 
+  
   
 } 
 
