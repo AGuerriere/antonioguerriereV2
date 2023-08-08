@@ -160,6 +160,15 @@ h2 {
   border-radius: 30px ;
 }
 
+#rps-image {
+  border: 2px solid rgb(128, 255, 0);
+  margin-bottom: 20px;
+}
+
+#retro-paint-image {
+  border: 2px solid rgb(255, 238, 0);
+}
+
 .project-image  {
   width:60vw;
 }
