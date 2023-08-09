@@ -23,6 +23,7 @@ header {
   align-items: flex-end;
   padding-bottom: 10vh;
   justify-content: center;
+  background-position: center;
 }
 
 .intro {
