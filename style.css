@@ -1,9 +1,10 @@
 :root {
-  --rosso: rgb(255, 0, 98);;
+  --rosso: rgb(255, 0, 98);
+  --acqua: rgb(0, 255, 255);
 }
 
 * {
-  color:rgb(0, 255, 255);
+  color: var(--acqua);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -84,12 +85,7 @@ a:hover:not(#arrow-link) {
   background-color: var(--rosso);
 }
 
-.project-description:nth-child(odd) {
-  display:flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-}
+
 
 
 h2 {
@@ -172,7 +168,10 @@ h2 {
 
 .project-image  {
   width:60vw;
-  /* border:2px solid var(--rosso) */
+}
+
+.black-img {
+  border: 2px solid var(--acqua)
 }
 
 .project-description h3{
@@ -181,10 +180,23 @@ h2 {
   width:fit-content;
 }
 
+.project-description h3 {
+  display: flex;
+  align-items: right;
+
+}
+
 .project-links {
   padding:2rem 0;
   display: flex;
-  justify-content: left ;
+}
+
+
+
+.project:nth-child(even) > .project-description {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
 }
 
 .project-links a {
@@ -193,13 +205,31 @@ h2 {
   text-align: center;
 }
 
+.project:nth-child(even) > img {
+  order:1;
+}
+
+.project:nth-child(even) > .project-description {
+  order:2;
+}
+
+.project:nth-child(odd) > .project-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+
+
+
 /* add a margin-right only to odd numbered links */
-.project:nth-child(odd) .project-links a{
+.project:nth-child(even) .project-links a{
   margin-right: 3rem;
 }
 
 /* add a margin-left only to even numbered links */
-.project:nth-child(even) .project-links a{
+.project:nth-child(odd) .project-links a{
   margin-left: 3rem;
 }
 
@@ -300,6 +330,12 @@ footer  {
     text-align: center!important;
   } 
   
+  .project:nth-child(even) > img {
+    order:2;
+  }
   
+  .project:nth-child(even) > .project-description {
+    order:1;
+  }
 } 
 
