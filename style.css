@@ -247,7 +247,15 @@ h2 {
   width: 90px;
   border-radius: 2px;
   border:0px;
-  
+  font-weight: bold;
+}
+
+#text {
+  height:200px !important;
+  width: 400px;
+}
+.captcha {
+  margin: 20px;
 }
 
 form {
