@@ -25,7 +25,8 @@
       <a href="#header">Home</a>
       <a href="#about-me">About</a>
       <a href="#projects-id">Projects</a>
-      <a href="https://github.com/AGuerriere">GitHub</a>
+      <a href="#contacts">Contact Me</a>
+      <a href="https://github.com/AGuerriere" target="_blank">GitHub</a>
     </div>
   </nav>
   <main id="main">
@@ -206,8 +207,26 @@
         </div>
         <img src="./imgs/gradient-calc.jpg" class="project-image" alt="project-screenshot">
       </div>
-      
     </section>
+    <section>
+      <div class="section-title" id="contacts"><h2>Contact Me</h2></div>
+      <form name="contact-form" method="POST" netlify>
+        <div class="form-name">
+          <label for="form-name" id="form-name">Name</label>
+          <input type="text">
+        </div>
+        <div class="form-company">
+          <label for="form-company" id="form-company">company</label>
+          <input type="text">
+        </div>
+        <div class="form-email">
+          <label for="form-email" id="form-email">Your email</label>
+          <input type="email">
+        </div>
+         <button type="submit">Submit</button>
+      </form>
+    </section>
+
   </main>
   <footer>Made by Antonio Guerriere 2022 - Copyright &copy;</footer>
 </body>
