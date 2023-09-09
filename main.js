@@ -25,18 +25,7 @@ navbuttons.forEach(element => {
 });
 
 
-// clicking outside the navbar closes the navbar
-const body = document.querySelector('body');
-const nav = document.querySelector('nav')
-body.addEventListener("click", function () {
-  toggled = false;
-  links.style.display = "none";
-  toggleButton.style.top = "auto";
-  toggleButton.style.backgroundColor = toggled ? "var(--rosso)" : "black";
-}, false);
-nav.addEventListener("click", function (e) {
-    e.stopPropagation(); //this is important! If removed, you'll get both alerts
-}, false);
+
 
 
 
@@ -47,6 +36,18 @@ function checkScreenWidth() {
     links.style.display = "flex";
   } else {
     links.style.display = "none";
+    // clicking outside the navbar closes the navbar
+    const body = document.querySelector('body');
+    const nav = document.querySelector('nav')
+    body.addEventListener("click", function () {
+      toggled = false;
+      links.style.display = "none";
+      toggleButton.style.top = "auto";
+      toggleButton.style.backgroundColor = toggled ? "var(--rosso)" : "black";
+    }, false);
+    nav.addEventListener("click", function (e) {
+        e.stopPropagation(); //this is important! If removed, you'll get both alerts
+    }, false);
   }
 }
 
