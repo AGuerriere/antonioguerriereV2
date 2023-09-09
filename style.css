@@ -420,10 +420,9 @@ footer  {
     width: auto;
   }
 
-
-
-  .links:active a {
+  a:hover:not(#arrow-link) {
     background-color: var(--rosso);
   }
+  
 } 
 
