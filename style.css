@@ -314,6 +314,23 @@ footer  {
   animation: none;
 }
 
+.toggle-button {
+  position: absolute;
+  right:1rem;
+  top: .75rem;
+  display:none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.menu-bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--acqua);
+}
+
 
 @media only screen and (max-width: 992px) {
   .intro {
@@ -393,7 +410,17 @@ footer  {
     order:1;
   }
 
- 
+  .toggle-button {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    width: auto;
+  }
+
+
   
 } 
 
