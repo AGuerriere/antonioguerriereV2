@@ -421,6 +421,9 @@ footer  {
   }
 
 
-  
+
+  .links:active a {
+    background-color: var(--rosso);
+  }
 } 
 
