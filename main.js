@@ -14,10 +14,13 @@ toggleButton.addEventListener('click', () => {
 // clicking on the links in the navbar, closes the navbar and removes the red style
 navbuttons.forEach(element => {
   element.addEventListener('click', () => {
-    toggled = !toggled;
-    links.style.display = "none";
-    toggleButton.style.top = "auto";
-    toggleButton.style.backgroundColor = toggled ? "var(--rosso)" : "black";
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 992) {
+      toggled = !toggled;
+      links.style.display = "none";
+      toggleButton.style.top = "auto";
+      toggleButton.style.backgroundColor = toggled ? "var(--rosso)" : "black";
+    }
   })
 });
 
@@ -34,3 +37,21 @@ body.addEventListener("click", function () {
 nav.addEventListener("click", function (e) {
     e.stopPropagation(); //this is important! If removed, you'll get both alerts
 }, false);
+
+
+
+// Function to check the screen width
+function checkScreenWidth() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth > 992) {
+    links.style.display = "flex";
+  } else {
+    links.style.display = "none";
+  }
+}
+
+// Initial check when the page loads
+checkScreenWidth();
+
+// Add an event listener to continuously check when the window is resized
+window.addEventListener('resize', checkScreenWidth);
