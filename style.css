@@ -297,6 +297,9 @@ footer  {
 #arrow {
   animation: bounce 2s infinite;
 }
+.h-captcha {
+  padding-bottom: 15px;
+}
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
