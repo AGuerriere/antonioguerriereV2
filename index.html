@@ -1,286 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antonio Guerriere</title>
-  <link rel="icon" type="image/x-icon" href="./imgs/favicon.webp">
-  <link rel="canonical" href="https://www.antonioguerriere.com/" />
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antonio Guerriere — Short Bio</title>
+  <meta name="description" content="Short bio of Antonio Guerriere — technologist and entrepreneur. Open University First-Class graduate (2025)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Antonio Guerriere — Short Bio" />
+  <meta property="og:description" content="Technologist & entrepreneur. Open University First-Class graduate (2025)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/antonio.jpg" />
+  <meta name="theme-color" content="#0f0f12" />
+  <style>
+    :root {
+      --bg: #0f0f12;
+      --fg: #e8e9ed;
+      --muted: #a7abb3;
+      --accent: #7dd3fc;
+      --card: #17181d;
+      --ring: rgba(125, 211, 252, 0.4);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #ffffff; --fg: #111216; --muted: #616672; --card: #f6f7f9; --accent:#0ea5e9; --ring: rgba(14,165,233,.2);}    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1000px 600px at 80% -10%, rgba(125,211,252,.10), transparent 60%),
+                  radial-gradient(800px 500px at -10% 10%, rgba(99,102,241,.08), transparent 60%),
+                  var(--bg);
+      color: var(--fg);
+      font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap {
+      max-width: 780px;
+      margin: min(8vh, 6rem) auto;
+      padding: 0 20px 64px;
+    }
+    header { display:flex; align-items:center; gap: 28px; }
+    .avatar {
+      width: 120px; height: 120px; border-radius: 16px; object-fit: cover;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 8px rgba(125,211,252,.06);
+      background: var(--card);
+    }
+    h1 { font-size: clamp(28px, 6vw, 48px); line-height: 1.1; margin: 0; letter-spacing: -0.015em; }
+    .subtitle { margin-top: 6px; color: var(--muted); font-size: clamp(14px, 2.5vw, 18px); }
+
+    main { margin-top: 28px; }
+    .bio { font-size: clamp(16px, 2.6vw, 20px); }
+
+    .pillbar { display:flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
+    .pill {
+      display:inline-flex; align-items:center; gap:8px; padding: 8px 12px; border-radius: 999px;
+      background: var(--card); color: var(--fg); border: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+    .dot { width:8px; height:8px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
+
+    .links { margin-top: 28px; display:flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      --shadow: 0 6px 20px rgba(14,165,233,.25);
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none; color: var(--bg);
+      background: var(--accent); padding: 12px 16px; border-radius: 12px; font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: transform .08s ease, box-shadow .08s ease, opacity .2s ease;
+    }
+    .btn.secondary { color: var(--fg); background: transparent; border:1px solid rgba(255,255,255,.12); box-shadow: none; }
+    .btn:hover { transform: translateY(-1px); }
+
+    footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+    .sep { opacity:.3; margin: 0 10px; }
+
+    /* Small helper for print or PDF */
+    @media print { .btn, .pillbar { display:none; } body { background: #fff; } }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Antonio Guerriere",
+      "description": "Technologist & entrepreneur. Open University First-Class graduate (2025).",
+      "url": "https://example.com/",
+      "image": "https://example.com/images/antonio.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME"
+      ]
+    }
+  </script>
 </head>
 <body>
-  <header id="header">
-    <div class="intro">
-      <div class="greeting">Hi, I'm <span>Antonio Guerriere</span></div>
-      <div class="description">I'm a Software Developer</div>
-      <div class="find-out">
-        <a id="arrow-link" href="#about-me">
-          <svg class="heading__arrow" id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"/></svg>
-        </a>      
+  <div class="wrap">
+    <header>
+      <!-- Replace the src with your own portrait path. Recommended: 800×800 JPG/WEBP. -->
+      <img class="avatar" src="/images/antonio.jpg" alt="Portrait of Antonio Guerriere" />
+      <div>
+        <h1>Antonio Guerriere</h1>
+        <div class="subtitle">Technologist & entrepreneur • Open University First-Class (BSc, 2025)</div>
       </div>
-    </div>
-  </header>
-  <nav>
-    <a class="toggle-button">
-      <span class="menu-bar"></span>
-      <span class="menu-bar"></span>
-      <span class="menu-bar"></span>
-    </a>
-    <div class="links">
-      <a href="#header">Home</a>
-      <a href="#about-me">About</a>
-      <a href="#projects-id">Projects</a>
-      <a href="#contacts">Contact Me</a>
-      <a href="https://github.com/AGuerriere" target="_blank">GitHub</a>
-    </div>
-  </nav>
-  <main id="main">
-    <section class="about">
-      <div class="section-title" id="about-me"><h2>About</h2></div>
-      <div class="about-details">
-        <div class="about-description">
-          <div class="silhoutte">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 482.9 482.9" style="enable-background:new 0 0 482.9 482.9" xml:space="preserve" height="100%" stroke="rgb(0, 0, 0)" stroke-width="16"><g><path fill="url(#gradient-1)" d="M239.7,260.2c0.5,0,1,0,1.6,0c0.2,0,0.4,0,0.6,0c0.3,0,0.7,0,1,0c29.3-0.5,53-10.8,70.5-30.5
-              c38.5-43.4,32.1-117.8,31.4-124.9c-2.5-53.3-27.7-78.8-48.5-90.7C280.8,5.2,262.7,0.4,242.5,0h-0.7c-0.1,0-0.3,0-0.4,0h-0.6
-              c-11.1,0-32.9,1.8-53.8,13.7c-21,11.9-46.6,37.4-49.1,91.1c-0.7,7.1-7.1,81.5,31.4,124.9C186.7,249.4,210.4,259.7,239.7,260.2z
-              M164.6,107.3c0-0.3,0.1-0.6,0.1-0.8c3.3-71.7,54.2-79.4,76-79.4h0.4c0.2,0,0.5,0,0.8,0c27,0.6,72.9,11.6,76,79.4
-              c0,0.3,0,0.6,0.1,0.8c0.1,0.7,7.1,68.7-24.7,104.5c-12.6,14.2-29.4,21.2-51.5,21.4c-0.2,0-0.3,0-0.5,0l0,0c-0.2,0-0.3,0-0.5,0
-              c-22-0.2-38.9-7.2-51.4-21.4C157.7,176.2,164.5,107.9,164.6,107.3z"></path><path fill="url(#gradient-2)" d="M446.8,383.6c0-0.1,0-0.2,0-0.3c0-0.8-0.1-1.6-0.1-2.5c-0.6-19.8-1.9-66.1-45.3-80.9c-0.3-0.1-0.7-0.2-1-0.3
-              c-45.1-11.5-82.6-37.5-83-37.8c-6.1-4.3-14.5-2.8-18.8,3.3c-4.3,6.1-2.8,14.5,3.3,18.8c1.7,1.2,41.5,28.9,91.3,41.7
-              c23.3,8.3,25.9,33.2,26.6,56c0,0.9,0,1.7,0.1,2.5c0.1,9-0.5,22.9-2.1,30.9c-16.2,9.2-79.7,41-176.3,41
-              c-96.2,0-160.1-31.9-176.4-41.1c-1.6-8-2.3-21.9-2.1-30.9c0-0.8,0.1-1.6,0.1-2.5c0.7-22.8,3.3-47.7,26.6-56
-              c49.8-12.8,89.6-40.6,91.3-41.7c6.1-4.3,7.6-12.7,3.3-18.8c-4.3-6.1-12.7-7.6-18.8-3.3c-0.4,0.3-37.7,26.3-83,37.8
-              c-0.4,0.1-0.7,0.2-1,0.3c-43.4,14.9-44.7,61.2-45.3,80.9c0,0.9,0,1.7-0.1,2.5c0,0.1,0,0.2,0,0.3c-0.1,5.2-0.2,31.9,5.1,45.3
-              c1,2.6,2.8,4.8,5.2,6.3c3,2,74.9,47.8,195.2,47.8s192.2-45.9,195.2-47.8c2.3-1.5,4.2-3.7,5.2-6.3
-              C447,415.5,446.9,388.8,446.8,383.6z"></path></g><defs><linearGradient id="gradient-1" x1="0" y1="0" x2="80%" y2="80%"><stop stop-color="rgb(255, 0, 98)" offset="0%"></stop><stop stop-color="rgb(0,255,255)" offset="100%"></stop></linearGradient><linearGradient id="gradient-2" x1="20%" y1="20%" x2="100%" y2="100%"><stop stop-color="rgb(0,255,255)" offset="0%"></stop><stop stop-color="rgb(255, 0, 98)" offset="100%"></stop></linearGradient></defs>
-            </svg>
-        </div>
-        <p>Second year BSc (Honours) Computing and IT student at The Open University and professional software developer.
-        Through self teaching, over the course of 2 years, I learned how to use CSS, HTML, Python, Javascript, React and Git. 
-        I am very passionate about all things technology and in particular web development, and creating apps with great impact. At the moment I am focusing on further improving my front-end skills but I am planning to soon be a full stack developer. When I am not coding and studying for university, I am probably working on home automation, installing something new on a raspberry pi or reading a book.</p>
-        
-        </div>
-        <div class="skills">
-          <div class="skill-column">
-            <div class="border-wrap"><div class="skill"><img src="./imgs/html5.webp"></div></div>
-            <div class="border-wrap"><div class="skill"><img src="./imgs/css.webp"></div></div>
-            <div class="border-wrap"><div class="skill"><img src="./imgs/python.webp"></div></div>
-          </div>
-          <div class="skill-column">
-            <div class="border-wrap"><div class="skill"><img src="./imgs/npm.webp"></div></div>
-            <div class="border-wrap"><div class="skill"><img src="./imgs/react.webp"></div></div>
-            <div class="border-wrap"><div class="skill"><img src="./imgs/git.webp"></div></div>
-          </div>
-          <div class="skill-column">
-            <div class="border-wrap"><div class="skill"><img src="./imgs/js.webp"></div></div>
-            <div class="border-wrap"><div class="skill"><img src="./imgs/linux.webp"></div></div>
-            <div class="border-wrap"><div class="skill"><img src="./imgs/vscode.webp"></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="projects">
-      <div class="section-title" id="projects-id"><h2>Projects</h2></div>
+    </header>
 
-      <div class="project">
-        <div class="project-description">
-          <h3>Mind Technica</h3>
-          Web Design Agency. To create the landing page I used NextJS/React, and Tailwind CSS.
-          <div class="project-links">
-            <a target="_blank" href="https://mindtechnica.com">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/mindtechnica">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/mindtechnica.webp" class="project-image" alt="project-screenshot" loading="lazy">
+    <main>
+      <p class="bio">
+        I'm a software-focused builder with a growing footprint in AI and robotics. I graduated from the
+        <strong>Open University</strong> in <strong>2025</strong> with a <strong>First-Class</strong> degree in Computing and I now run and invest in
+        technology ventures. I'm actively exploring <em>new business opportunities</em> and partnerships across Europe—especially products at the intersection of
+        intelligent software, automation, and delightful user experiences.
+      </p>
+
+      <div class="pillbar" aria-label="Focus areas">
+        <span class="pill"><span class="dot" aria-hidden="true"></span> AI & Robotics</span>
+        <span class="pill"><span class="dot" aria-hidden="true"></span> Software Products</span>
+        <span class="pill"><span class="dot" aria-hidden="true"></span> Entrepreneurship</span>
+        <span class="pill"><span class="dot" aria-hidden="true"></span> Strategy & Ops</span>
       </div>
 
-      <div class="project">
-        <div class="project-description">
-          <h3>Solar System with Three JS</h3>
-          An animated site created using Three JS
-          <div class="project-links">
-            <a target="_blank" href="https://solar-system-planets-3d.netlify.app/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/solar-system">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/solar-system.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Life Weeks at a Glance</h3>
-          Generate a graph to see how many weeks you have lived already and how many more until 82. This is a PWA built with Javascript, HTML and CSS.
-          <div class="project-links">
-            <a target="_blank" href="https://life-weeks-glance.netlify.app">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/life-weeks-glance">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/life-weeks-glance.webp" class="project-image black-img" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Rock, Paper, Scissors</h3>
-          Rock, Paper, Scissors game created with HTML, CSS and Javascript
-          <div class="project-links">
-            <a target="_blank" href="https://agdev-rock-paper-scissors.netlify.app">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/rock-paper-scissors">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/rps.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Tic-Tac-Toe</h3>
-          Tic-Tac-Toe game created using factory functions and module patterns. Built with HTML, CSS and Javascript.
-          <div class="project-links">
-            <a target="_blank" href="https://ag-tic-tac-toe.netlify.app/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/tic-tac-toe">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/tic-tac-toe.webp" class="project-image" alt="project-screenshot" loading="lazy">
+      <div class="links">
+        <!-- Update these two links -->
+        <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn secondary" href="https://YOUR-COMPANY-DOMAIN" target="_blank" rel="noopener">Company site</a>
       </div>
 
-      <div class="project">
-        <div class="project-description">
-          <h3>Retro Paint</h3>
-          Retro paint app created using HTML, CSS and Vanilla Javascript.
-          <div class="project-links">
-            <a target="_blank" href="https://retro-sketchpad.netlify.app/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/retro-paint">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/retro-paint.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Drumkit</h3>
-          This is an online drum that can be played with the keyboard created using HTML, CSS and Vanilla Javascript.
-          <div class="project-links">
-            <a target="_blank" href="https://drum-keyboard.netlify.app">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/js-drum">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/drumkit.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Da Joe Cafe</h3>
-          A marketing site for a cafe that I built with HTML and CSS
-          <div class="project-links">
-            <a target="_blank" href="https://dajoe.netlify.app/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/da-joe-cafe">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/da-joe.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Cats React Cards</h3>
-          A simple React app, created using the Robohash API to create unique images and using data from JSONPlaceholder fake API.
-          <div class="project-links">
-            <a target="_blank" href="https://aguerriere.github.io/catfriends-react/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/catfriends-react">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/cats.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Calculator</h3>
-          A calculator built with Javascript, HTML and CSS.
-          <div class="project-links">
-            <a target="_blank" href="https://ag-js-calculator.netlify.app/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/calculator">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/calculator.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Portfolio</h3>
-          This is my current portfolio that I created to showcase my work and skills. To create this website, I have used only HTML and CSS. The website is hosted and deployed with Netlify.
-          <div class="project-links">
-            <a target="_blank" href="antonioguerriere.com">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/antonioguerriereV2">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/portfolio.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Old Portfolio</h3>
-          This is the previous version of my portfolio that I had created to showcase my work. I created it using React, Bootstrap and React Router.
-          <div class="project-links">
-            <a target="_blank" href="https://antonioguerriere-v1.netlify.app/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/antonioguerriere.comV1">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/old-portfolio.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      
-      <div class="project">
-        <div class="project-description">
-          <h3>Gradient Calculator</h3>
-          A gradient background generator, created using HTML, CSS and Javascript.
-          <div class="project-links">
-            <a target="_blank" href="https://aguerriere.github.io/gradient-background-generator/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/gradient-background-generator">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/gradient-calc.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-      <div class="project">
-        <div class="project-description">
-          <h3>Book Library</h3>
-          A book library using Object Orientated Programming, HTML, CSS and Javascript.
-          <div class="project-links">
-            <a target="_blank" href="https://booksiread.netlify.app/">Live</a>
-            <a target="_blank" href="https://github.com/AGuerriere/library">Code</a>
-          </div>
-        </div>
-        <img src="./imgs/book-library.webp" class="project-image" alt="project-screenshot" loading="lazy">
-      </div>
-    </section>
-    <section>
-      <div class="section-title" id="contacts"><h2>Contact Me</h2>
-      <p>Do you want to collaborate on a new project or work together? Let's chat! Send me a message using the form below!</p>
-      <form name="contact-form" method="POST" action="https://api.web3forms.com/submit">
-        <input type="hidden" name="access_key" value="6efd4d91-72a8-473b-9ec9-91a78ab702e1">
-        <input type="hidden" name="redirect" value="https://antonioguerriere.com/thanks.html">
-        <div class="form-section">
-          <label for="name">Name</label>
-          <input name="name" id="name" type="text">
-        </div>
-        <div class="form-section">
-          <label for="company">Company name</label>
-          <input name="company" id="company" type="text">
-        </div>
-        <div class="form-section">
-          <label for="email">Your email</label>
-          <input name="email" id="email" type="email">
-        </div>
-        <div class="form-section">
-          <label for="text">Your Message</label>
-          <textarea name="text" id="text" type="text"></textarea>
-        </div>
-        <div class="h-captcha" data-captcha="true"></div>
-        <button type="submit">Submit</button>
-      </form>            
-    </div>
-    </section>
-
-  </main>
-  <footer>Made by Antonio Guerriere 2023 - Copyright &copy;</footer>
-  <script src="main.js"></script>
-  <script src="https://web3forms.com/client/script.js" async defer></script>
+      <footer>
+        Available for conversations about new ventures, acquisitions, and partnerships.
+        <span class="sep">•</span>
+        Based between the UK & Italy.
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
