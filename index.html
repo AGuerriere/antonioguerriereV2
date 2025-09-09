@@ -48,6 +48,62 @@
       border: 1px solid rgba(255,255,255,.08);
       box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 8px rgba(125,211,252,.06);
       background: var(--card);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .avatar:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 40px rgba(0,0,0,.4), 0 0 0 8px rgba(125,211,252,.08);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .modal.show {
+      display: flex;
+    }
+    .modal-content {
+      width: 70vw;
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.6);
+      animation: modalFadeIn 0.3s ease-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-image {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+    @media (min-width: 768px) {
+      .modal-content {
+        width: 50rem;
+        max-width: 50rem;
+      }
+    }
+    .wrap.blurred {
+      filter: blur(8px);
+      transition: filter 0.3s ease;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
     h1 { font-size: clamp(28px, 6vw, 48px); line-height: 1.1; margin: 0; letter-spacing: -0.015em; }
     .subtitle { margin-top: 6px; color: var(--muted); font-size: clamp(14px, 2.5vw, 18px); }
@@ -97,7 +153,7 @@
 <body>
   <div class="wrap">
     <header>
-      <img class="avatar" src="/images/antonio.webp" alt="Portrait of Antonio Guerriere" />
+      <img class="avatar" src="/images/antonio.webp" alt="Portrait of Antonio Guerriere" onclick="openModal()" />
       <div>
         <h1>Antonio Guerriere</h1>
         <div class="subtitle">Technologist & entrepreneur • Open University First-Class (BSc, 2025)</div>
@@ -132,5 +188,41 @@
       </footer>
     </main>
   </div>
+
+  <div id="imageModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <img class="modal-image" src="/images/antonio.webp" alt="Portrait of Antonio Guerriere" />
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      const modal = document.getElementById('imageModal');
+      const wrap = document.querySelector('.wrap');
+      modal.classList.add('show');
+      wrap.classList.add('blurred');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(event) {
+      if (event.target === event.currentTarget) {
+        const modal = document.getElementById('imageModal');
+        const wrap = document.querySelector('.wrap');
+        modal.classList.remove('show');
+        wrap.classList.remove('blurred');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modal = document.getElementById('imageModal');
+        const wrap = document.querySelector('.wrap');
+        modal.classList.remove('show');
+        wrap.classList.remove('blurred');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 </body>
 </html>
